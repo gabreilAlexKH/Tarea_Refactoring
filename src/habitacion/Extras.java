@@ -10,6 +10,7 @@ public enum Extras {
 	 * El wifi se cobra por dia, se pide a la hora de hacer factura y se suma.
 	 */
 	private static int precio;
+	
 	Extras(int precio){
 		this.setPrecio(precio);
 	}

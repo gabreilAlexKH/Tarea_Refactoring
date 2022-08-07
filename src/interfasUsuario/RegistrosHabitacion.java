@@ -14,7 +14,7 @@ import habitacion.HabitacionSuite;
 import habitacion.HabitacionTriple;
 import manejoArchivos.EscritorArchivos;
 import manejoArchivos.LectorArchivo;
-import manejoColleciones.HabitacionesCollection;
+import manejoColeciones.HabitacionesColection;
 
 public class RegistrosHabitacion {
 	
@@ -48,6 +48,7 @@ public static Extras preguntarTodoIncluido() {
         
         FichaReserva fichaReserva = new FichaReserva(inicioEstancia, entrada.nextInt(), cliente);
         Habitacion habitacion= new Habitacion(entrada.nextInt(), entrada.nextInt(), fichaReserva);
+        habitacion.setFumadores(entrada.nextBoolean());
 		
 		return habitacion;
 	}
@@ -62,12 +63,12 @@ public static Extras preguntarTodoIncluido() {
 		System.out.println("Reserva una habitacion del Hotel ");
 		System.out.println("---------------------------------");
 		
-		Extras TodoIncluido = preguntarTodoIncluido();
+		Extras extras = preguntarTodoIncluido();
         Cliente cliente= RegistrosCliente.solisitarCliente();
         Habitacion habitacion= solisitarHabitacion(cliente);
         
         FichaReserva fichaReserva = habitacion.getDatosReserva();
-        fichaReserva.setExtras(TodoIncluido);
+        fichaReserva.setExtras(extras);
         
         System.out.println("¿Son los datos correctos?");
         System.out.println("La habitacion ha sido reservada el "+ fichaReserva.getDate().toString() +" con el NÂº de habitacion "+ habitacion.getNumeroHabitacion()+" durante "+ fichaReserva.getDiasEstancia()+
@@ -91,10 +92,10 @@ public static Extras preguntarTodoIncluido() {
 	 
 	 }
     
-    public static void guardarHabitacion( HabitacionesCollection habitaciones , Habitacion habitacion) {
+    public static void guardarHabitacion( HabitacionesColection habitaciones , Habitacion habitacion) {
     	
     	habitaciones.addHabitacion(habitacion);
-        EscritorArchivos.escribirReservas(habitaciones.getHabitaciones() , "reservas.txt");
+        EscritorArchivos.escribirReservas(habitaciones.getHabitaciones());
     	LectorArchivo.leerReservas();
     	
     }
@@ -133,7 +134,7 @@ public static Extras preguntarTodoIncluido() {
 	/**
 	 * Submenu leer opciones tipo habitaciok
 	 */
-	public static void reservarHabitacion(HabitacionesCollection habitaciones){
+	public static void reservarHabitacion(HabitacionesColection habitaciones){
 		
 		Habitacion habitacion=null;
 		

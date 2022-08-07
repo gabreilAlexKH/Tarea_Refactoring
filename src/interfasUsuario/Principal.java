@@ -1,8 +1,8 @@
 package interfasUsuario;
 
 import manejoArchivos.LectorArchivo;
-import manejoColleciones.ClientesCollection;
-import manejoColleciones.HabitacionesCollection;
+import manejoColeciones.ClientesColection;
+import manejoColeciones.HabitacionesColection;
 
 import java.util.Scanner;
 
@@ -16,8 +16,8 @@ public class Principal{
      */
 	public static void main(String[]args){
 		
-		ClientesCollection todosClientes = new ClientesCollection();
-		HabitacionesCollection todosHabitaciones = new HabitacionesCollection();
+		ClientesColection todosClientes = new ClientesColection();
+		HabitacionesColection todosHabitaciones = new HabitacionesColection();
 
 		System.out.println("Bienvenido al programa de reservas del Hotel 5 Estrellas, seleccione la opcion que desea realizar: ");
 		System.out.println("---------------------------------------------------------------------------------------------------");

@@ -6,7 +6,7 @@ import cliente.Cliente;
 import cliente.ID;
 import manejoArchivos.EscritorArchivos;
 import manejoArchivos.LectorArchivo;
-import manejoColleciones.ClientesCollection;
+import manejoColeciones.ClientesColection;
 
 public class RegistrosCliente {
 	
@@ -33,7 +33,7 @@ public class RegistrosCliente {
 	 * @param todosClientes
 	 * @return cliente
 	 */
-	public static Cliente anadirCliente(ClientesCollection clientes){
+	public static void anadirCliente(ClientesColection clientes){
 				
 		System.out.println("Añade un cliente al Hotel");
 		System.out.println("-------------------------");
@@ -47,7 +47,7 @@ public class RegistrosCliente {
 		String respuesta1 = entrada.next(); 
         if(respuesta1.equals("Si")) {
         	clientes.addCliente(cliente);
-            EscritorArchivos.escribirClientes(clientes.getClientes(), "clientes.txt");
+            EscritorArchivos.escribirClientes(clientes.getClientes());
             LectorArchivo.leerClientes();
             System.out.println("El cliente ha sido reservado");
             
@@ -55,7 +55,6 @@ public class RegistrosCliente {
         	System.out.println("Canselando prosedimiento, retornando a menu previo");;
         }
 		
-        return cliente;
 	
 	}
 	

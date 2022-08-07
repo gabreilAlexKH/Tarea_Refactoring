@@ -1,25 +1,25 @@
-package manejoColleciones;
+package manejoColeciones;
 
 import java.util.LinkedList;
 import java.util.ListIterator;
 import cliente.Cliente;
 import habitacion.Habitacion;
-public class HabitacionesCollection {
+public class HabitacionesColection {
 	
 	private LinkedList<Habitacion> habitaciones;
 	
 	
 	
-	public HabitacionesCollection() {
+	public HabitacionesColection() {
 		super();
 		habitaciones = new LinkedList<Habitacion>();
 	}
 
 
 
-	public void addHabitacion( Habitacion Habitacion ) {
+	public void addHabitacion( Habitacion habitacion ) {
 		
-		habitaciones.addFirst(Habitacion);
+		habitaciones.addFirst(habitacion);
 	}
 
 	

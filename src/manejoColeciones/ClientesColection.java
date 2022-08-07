@@ -1,15 +1,15 @@
-package manejoColleciones;
+package manejoColeciones;
 
 import java.util.LinkedList;
 
 import cliente.Cliente;
 
-public class ClientesCollection {
+public class ClientesColection {
 	
 	private LinkedList<Cliente>clientes;
 
 	
-	public ClientesCollection() {
+	public ClientesColection() {
 		clientes = new LinkedList<Cliente>() ;
 	}
 

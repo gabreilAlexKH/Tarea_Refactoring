@@ -1,2 +1,2 @@
--. Juan Mera con DNI: 1457 y tarjeta VISA: 145
-Tiene una reserva el dia 1/2/2021 en la habitacion 4
+-. Juan Dios con DNI: 147 y tarjeta VISA:1465
+Tiene una reserva el dia Tue Jul 14 23:11:16 COT 16 en la habitacion4

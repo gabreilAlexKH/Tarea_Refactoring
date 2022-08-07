@@ -3,7 +3,7 @@ package interfasUsuario;
 import java.util.Scanner;
 import habitacion.Extras;
 import habitacion.Habitacion;
-import manejoColleciones.HabitacionesCollection;
+import manejoColeciones.HabitacionesColection;
 
 public class Salidas {
 	
@@ -76,7 +76,7 @@ public class Salidas {
      * Metodo para realizar la factura del hotel
      * @param todasHabitaciones
      */
-    public static void hacerFactura(HabitacionesCollection todasHabitaciones){
+    public static void hacerFactura(HabitacionesColection todasHabitaciones){
     	
     	System.out.println("Se procede a realizar la factura del Cliente");
     	System.out.println("--------------------------------------------");

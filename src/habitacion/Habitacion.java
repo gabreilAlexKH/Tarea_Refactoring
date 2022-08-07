@@ -15,17 +15,6 @@ public class Habitacion{
 		
 	}
 
-	/**
-	 * Constructor con parametros de Habitacion
-	 * @param dia
-	 * @param mes
-	 * @param anyo
-	 * @param numeroHabitacion
-	 * @param diasEstancia
-	 * @param fumadores
-	 * @param cliente
-	 * @param ocupada
-	 */
 	public Habitacion(int numeroHabitacion, int precio, FichaReserva datosReserva){
 		this.numeroHabitacion=numeroHabitacion;
 		this.precio = precio;
