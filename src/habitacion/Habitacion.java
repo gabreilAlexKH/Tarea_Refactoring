@@ -1,8 +1,5 @@
 package habitacion;
 
-import java.util.*;
-import java.util.Map.Entry;
-
 public class Habitacion{
 	
 	
@@ -12,6 +9,11 @@ public class Habitacion{
 	private boolean ocupada;
 	private FichaReserva datosReserva;
 	
+	
+	public Habitacion() {
+		
+		
+	}
 
 	/**
 	 * Constructor con parametros de Habitacion
@@ -26,10 +28,22 @@ public class Habitacion{
 	 */
 	public Habitacion(int numeroHabitacion, int precio, FichaReserva datosReserva){
 		this.numeroHabitacion=numeroHabitacion;
-		this.ocupada=false;
+		this.precio = precio;
+		this.ocupada=true;
 		this.fumadores=false;
 		this.datosReserva =  datosReserva;
 	}
+	
+	/**
+	 * Reinicia la habitacion a un estado sin Cliente
+	 * @return 
+	 */
+    public void desOcuparHabitacion(){
+    	this.ocupada=false;
+		this.fumadores=false;
+		this.datosReserva =  null;
+    	
+    }
 	
 	public String traduccion(){
 		String traduccion;
@@ -52,6 +66,19 @@ public class Habitacion{
 		return traduccion;
 	    }
 	
+	/**
+	 * Copia los datos de una habitacion en otra
+	 * @param habitacion_prima
+	 */
+	public void copyHabitacion(Habitacion habitacion_prima) {
+		
+		this.numeroHabitacion=habitacion_prima.numeroHabitacion;
+		this.precio = habitacion_prima.precio;
+		this.ocupada=habitacion_prima.ocupada;
+		this.fumadores=habitacion_prima.fumadores;
+		this.datosReserva =  habitacion_prima.datosReserva;
+		
+	}
 
 	public int getNumeroHabitacion() {
 		return numeroHabitacion;

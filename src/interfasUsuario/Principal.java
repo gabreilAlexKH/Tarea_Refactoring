@@ -1,24 +1,14 @@
 package interfasUsuario;
 
-import cliente.*;
-import habitacion.*;
-import manejoArchivos.EscritorArchivos;
 import manejoArchivos.LectorArchivo;
 import manejoColleciones.ClientesCollection;
 import manejoColleciones.HabitacionesCollection;
 
 import java.util.Scanner;
-import java.util.Set;
-import java.io.*;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.ListIterator;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.LinkedList;
+
 public class Principal{
 	
-    static Scanner entrada=  new Scanner(System.in);
+    private static Scanner entrada=  new Scanner(System.in);
     
     /**
      * Metodo principal, donde se puede elegir entre las siguientes opciones del programa
@@ -26,23 +16,19 @@ public class Principal{
      */
 	public static void main(String[]args){
 		
-		
 		ClientesCollection todosClientes = new ClientesCollection();
 		HabitacionesCollection todosHabitaciones = new HabitacionesCollection();
-		
-		Habitacion habitacion=null;
-		Cliente cliente=null;
-		
+
 		System.out.println("Bienvenido al programa de reservas del Hotel 5 Estrellas, seleccione la opcion que desea realizar: ");
 		System.out.println("---------------------------------------------------------------------------------------------------");
 		int opcion = leerMenuHotel();
 		while (opcion != 0) {
 			switch (opcion) {
 			case 1:
-				cliente= todosClientes.anadirCliente();
+				RegistrosCliente.anadirCliente(todosClientes);
 				break;
 			case 2:
-				Registros.reservarHabitacion(todosHabitaciones);
+				RegistrosHabitacion.reservarHabitacion(todosHabitaciones);
 				break;
 			case 3:
 				LectorArchivo.leerReservas();
@@ -51,7 +37,7 @@ public class Principal{
 				LectorArchivo.leerClientes();
 				break;
 			case 5:
-				Salidas.hacerFactura(todosHabitaciones.getHabitaciones());
+				Salidas.hacerFactura(todosHabitaciones);
 				break;
 			case 0:
 				entrada.close();
