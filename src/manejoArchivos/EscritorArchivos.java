@@ -6,6 +6,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.List;
 
 import cliente.Cliente;
 import cliente.ID;
@@ -20,7 +21,7 @@ public class EscritorArchivos {
 	 * @param Fich
 	 */
 	
-	public static void escribirClientes(LinkedList<Cliente>todosClientes){
+	public static void escribirClientes(List<Cliente>todosClientes){
 		Iterator<Cliente>itr= todosClientes.iterator();
 		String ruta= "clientes.txt";
 		File archivo = new File(ruta);
@@ -66,7 +67,7 @@ public class EscritorArchivos {
      * @param todasHabitaciones
      * @param Fich
      */
-    public static void escribirReservas(LinkedList<Habitacion>todasHabitaciones){
+    public static void escribirReservas(List<Habitacion>todasHabitaciones){
     	Iterator<Habitacion>itr= todasHabitaciones.iterator();
 		String ruta= "reservas.txt";
 		File archivo = new File(ruta);

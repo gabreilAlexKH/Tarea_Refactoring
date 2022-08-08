@@ -1,6 +1,3 @@
--. Nombre: Maria
-Apellidos: Lia
-DNI: 1459
-Nombre: Juan
-Apellidos: Mera
-DNI: 1457
+-. Nombre: Juan
+Apellidos: MAMAA
+DNI: 784

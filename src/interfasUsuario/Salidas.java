@@ -57,7 +57,8 @@ public class Salidas {
     
     public static int calcularPrecioEstancia(Habitacion habitacion) {
     	
-    	int preciototal=habitacion.getDatosReserva().getDiasEstancia()* habitacion.getPrecio();
+    	int diasEstancia = habitacion.getDatosReserva().getDiasEstancia();
+    	int precioEstancia= habitacion.getPrecio() * diasEstancia;
 		 
 		System.out.println("¿Ha solicitado algun servicio como, Wi-Fi, Parking, Lavanderia o el Servicio de Habitaciones?");
 		System.out.println("Si/No");
@@ -65,10 +66,10 @@ public class Salidas {
 		
 		if(respuesta.equals("SI")){
 			int precioExtras = preguntarServiciosExtra();
-			preciototal+= precioExtras;
+			precioEstancia+= precioExtras;
 		}
 		
-		return preciototal;
+		return precioEstancia;
     	
     }
     
@@ -87,16 +88,16 @@ public class Salidas {
     	Habitacion habitacion = todasHabitaciones.getHabitacionCliente( dni ) ;
 
     	if(habitacion == null){	
-    		System.out.println("No exsite el cliente o habitacion con ese cliente");
+    		System.out.println("No existe el cliente o habitacion con ese cliente");
     		return;
     	}
     	
 		System.out.println("Cliente correcto, desocupando habitacion");
 		
-		habitacion.desOcuparHabitacion();
     	System.out.println("Se puede empezar ha realizar la factura, la habitacion esta libre.");    	
     	int precioTotal = calcularPrecioEstancia(habitacion);
-		
+		habitacion.desOcuparHabitacion();
+
 		System.out.println("---------------------------------");
 		System.out.println("El precio total de la estancia es de: "+precioTotal);
     	

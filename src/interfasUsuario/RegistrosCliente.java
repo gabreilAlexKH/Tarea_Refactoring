@@ -44,14 +44,14 @@ public class RegistrosCliente {
 		System.out.println(cliente.getNombre() +" "+ cliente.getApellidos() +" "+ cliente.getId().getDNI() +" "+ cliente.getId().getVISA()+ " " + cliente.traduccion());
 		System.out.println("Escribe: Si / No"); 
 		
-		String respuesta1 = entrada.next(); 
-        if(respuesta1.equals("Si")) {
+		String respuesta1 = entrada.next().toUpperCase().trim(); 
+        if(respuesta1.equals("SI")) {
         	clientes.addCliente(cliente);
             EscritorArchivos.escribirClientes(clientes.getClientes());
             LectorArchivo.leerClientes();
             System.out.println("El cliente ha sido reservado");
             
-        }else if(respuesta1.equals("No")){
+        }else if(respuesta1.equals("NO")){
         	System.out.println("Canselando prosedimiento, retornando a menu previo");;
         }
 		

@@ -1,6 +1,8 @@
 package manejoColeciones;
 
 import java.util.LinkedList;
+import java.util.Collections;
+import java.util.List;
 
 import cliente.Cliente;
 
@@ -18,8 +20,8 @@ public class ClientesColection {
     	clientes.addFirst(cliente);
 	}
 
-	public LinkedList<Cliente> getClientes() {
-		return clientes;
+	public List<Cliente> getClientes() {
+		return Collections.unmodifiableList(clientes);
 	}
 
 	
